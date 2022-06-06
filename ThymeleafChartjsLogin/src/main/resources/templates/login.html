@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/general :: include-frag"/>
+</head>
+<body>
+
+<div th:replace="fragments/general :: login-menu-frag"/>
+
+<div class="container">
+    <form method="post" th:action="@{/login}" role="form" class="form-horizontal" style="max-width: 400px; margin: auto">
+        <br/>
+        <br/>
+        <h2>Login</h2>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="usernameHelp">
+            <div id="usernameHelp" class="form-text">Enter ldap username.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Submit</button>
+
+        <br/>
+        <br/>
+
+        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+            You have been logged out
+        </div>
+        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+            Invalid username and password!
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

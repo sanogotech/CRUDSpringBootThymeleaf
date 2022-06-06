@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/general :: include-frag"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/charts.js"></script>
+</head>
+<body>
+
+<div th:replace="fragments/general :: menu-frag"/>
+
+<div class="container">
+    <div th:replace="fragments/general :: flash-message-frag"/>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col">
+            <canvas id="piechartContainer" width="200" height="300"></canvas>
+        </div>
+        <div class="col">
+            <canvas id="barchartContainer" width="200" height="300"></canvas>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col">
+            <canvas id="linechartContainer" width="200" height="300"></canvas>
+        </div>
+        <div class="col">
+            <canvas id="stackchartContainer" width="200" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
